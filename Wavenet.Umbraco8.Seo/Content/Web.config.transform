@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="sitemaps.xml" stopProcessing="true">
+          <match url="sitemap-([a-z]{2}).xml" />
+          <action type="Rewrite" url="{R:1}/sitemap" />
+        </rule>
+        <rule name="robots.txt" stopProcessing="true">
+          <match url="robots.txt" />
+          <action type="Rewrite" url="robots-txt" />
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>

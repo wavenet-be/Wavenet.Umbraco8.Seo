@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wavenet.Umbraco8.Seo</name>
+    </assembly>
+    <members>
+        <member name="T:Wavenet.Umbraco8.Seo.Composing.SeoComposer">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Composing.SeoComposer"/>.
+            </summary>
+            <seealso cref="T:Umbraco.Core.Composing.IUserComposer" />
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Composing.SeoComposer.Compose(Umbraco.Core.Composing.Composition)">
+            <inheritdoc />
+        </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.RobotsTxtController">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.RobotsTxtController"/>.
+            </summary>
+            <seealso cref="T:Umbraco.Web.Mvc.RenderMvcController" />
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.RobotsTxtController.Index(Umbraco.Web.Models.ContentModel)">
+            <inheritdoc />
+        </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Routing.SeoContentFinder">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Routing.SeoContentFinder"/>.
+            </summary>
+            <seealso cref="T:Umbraco.Web.Routing.IContentFinder" />
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Routing.SeoContentFinder.TryFindContent(Umbraco.Web.Routing.PublishedRequest)">
+            <inheritdoc />
+        </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Routing.SeoUrlProvider">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Routing.SeoUrlProvider"/>.
+            </summary>
+            <seealso cref="T:Umbraco.Web.Routing.IUrlProvider" />
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Routing.SeoUrlProvider.GetOtherUrls(Umbraco.Web.UmbracoContext,System.Int32,System.Uri)">
+            <inheritdoc />
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Routing.SeoUrlProvider.GetUrl(Umbraco.Web.UmbracoContext,Umbraco.Core.Models.PublishedContent.IPublishedContent,Umbraco.Core.Models.PublishedContent.UrlMode,System.String,System.Uri)">
+            <inheritdoc />
+        </member>
+        <member name="T:Wavenet.Web.Site.Controllers.DocumentTypes.SitemapXmlController">
+            <summary>
+            <see cref="T:Wavenet.Web.Site.Controllers.DocumentTypes.SitemapXmlController"/>.
+            </summary>
+            <seealso cref="T:Umbraco.Web.Mvc.RenderMvcController" />
+        </member>
+        <member name="M:Wavenet.Web.Site.Controllers.DocumentTypes.SitemapXmlController.Index(Umbraco.Web.Models.ContentModel)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

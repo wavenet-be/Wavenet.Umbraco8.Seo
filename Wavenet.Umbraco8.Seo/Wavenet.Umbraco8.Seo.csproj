@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Company>Wavenet</Company>
+    <Authors>Olivier Bossaer</Authors>
+    <Description>Include hangfire in your Umbraco projects.</Description>
+    <Copyright>Wavenet ©</Copyright>
+    <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/wavenet-be/Wavenet.Umbraco.Seo</PackageProjectUrl>
+    <PackageIconUrl>https://www.wavenet.be/favicon.ico</PackageIconUrl>
+    <PackageIcon>wavenet.png</PackageIcon>
+    <RepositoryUrl>https://github.com/wavenet-be/Wavenet.Umbraco.Seo</RepositoryUrl>
+    <PackageTags>Umbraco8 SEO</PackageTags>
+    <Version>1.0.0</Version>
+    <DocumentationFile>Wavenet.Umbraco8.Seo.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="UmbracoCms.Web" Version="[8.1,9)" />
+    <PackageReference Include="uSync" Version="[8,9)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Content\web.config.transform" Pack="true" PackagePath="./content/" />
+    <Content Include="Content\uSync\**\*" Pack="true" PackagePath="./content/uSync" />
+    <Content Include="Content\wavenet.png" Pack="true" PackagePath="./wavenet.png" />
+    <None Remove="Wavenet.Umbraco8.Seo.xml" />
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+</Project>
