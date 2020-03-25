@@ -80,6 +80,8 @@ namespace Wavenet.Umbraco8.Seo.Models
         /// Determine if XML should serialize the ChangeFrequency property.
         /// </summary>
         /// <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public bool ShouldSerializeChangeFrequency()
             => this.ChangeFrequency != null;
 
@@ -87,6 +89,8 @@ namespace Wavenet.Umbraco8.Seo.Models
         /// Determine if XML should serialize the LastModified property.
         /// </summary>
         /// <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public bool ShouldSerializeLastModified()
             => this.LastModified != null;
 
@@ -94,6 +98,8 @@ namespace Wavenet.Umbraco8.Seo.Models
         /// Determine if XML should serialize the Priority property.
         /// </summary>
         /// <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public bool ShouldSerializeSerializedPriority()
             => this.Priority != null;
     }
