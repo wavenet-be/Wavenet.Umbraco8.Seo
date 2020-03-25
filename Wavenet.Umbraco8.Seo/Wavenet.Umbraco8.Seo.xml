@@ -22,6 +22,165 @@
         <member name="M:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.RobotsTxtController.Index(Umbraco.Web.Models.ContentModel)">
             <inheritdoc />
         </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.SitemapXmlController">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.SitemapXmlController"/>.
+            </summary>
+            <seealso cref="T:Umbraco.Web.Mvc.RenderMvcController" />
+        </member>
+        <member name="E:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.SitemapXmlController.BuildSitemap">
+            <summary>
+            Occurs when the sitemap is generated.
+            </summary>
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Controllers.DocumentTypes.SitemapXmlController.Index(Umbraco.Web.Models.ContentModel)">
+            <inheritdoc />
+        </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Extensions.CollectionExtensions">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Extensions.CollectionExtensions"/>.
+            </summary>
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Extensions.CollectionExtensions.Add``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Adds the range.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="collection">The collection.</param>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Adds the range.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="collection">The collection.</param>
+            <param name="items">The items.</param>
+        </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Models.ChangeFrequency">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Models.ChangeFrequency"/>.
+            </summary>
+        </member>
+        <member name="F:Wavenet.Umbraco8.Seo.Models.ChangeFrequency.Always">
+            <summary>
+            Page changes always.
+            </summary>
+        </member>
+        <member name="F:Wavenet.Umbraco8.Seo.Models.ChangeFrequency.Hourly">
+            <summary>
+            Page changes each hour.
+            </summary>
+        </member>
+        <member name="F:Wavenet.Umbraco8.Seo.Models.ChangeFrequency.Daily">
+            <summary>
+            Page changes each day.
+            </summary>
+        </member>
+        <member name="F:Wavenet.Umbraco8.Seo.Models.ChangeFrequency.Weekly">
+            <summary>
+            Page changes each week.
+            </summary>
+        </member>
+        <member name="F:Wavenet.Umbraco8.Seo.Models.ChangeFrequency.Monthly">
+            <summary>
+            Page changes each month.
+            </summary>
+        </member>
+        <member name="F:Wavenet.Umbraco8.Seo.Models.ChangeFrequency.Yearly">
+            <summary>
+            Page changes each year.
+            </summary>
+        </member>
+        <member name="F:Wavenet.Umbraco8.Seo.Models.ChangeFrequency.Never">
+            <summary>
+            The page never changes.
+            </summary>
+        </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Models.Sitemap">
+            <summary>
+            <see cref="T:Wavenet.Umbraco8.Seo.Models.Sitemap"/> model.
+            </summary>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Sitemap.Urls">
+            <summary>
+            Gets the urls.
+            </summary>
+            <value>
+            The urls.
+            </value>
+        </member>
+        <member name="T:Wavenet.Umbraco8.Seo.Models.Url">
+            <summary>
+            Sitemap URL.
+            </summary>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Url.ChangeFrequency">
+            <summary>
+            Gets or sets the change frequency.
+            </summary>
+            <value>
+            The change frequency.
+            </value>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Url.Content">
+            <summary>
+            Gets or sets the content.
+            </summary>
+            <value>
+            The content.
+            </value>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Url.LastModified">
+            <summary>
+            Gets or sets the last modified.
+            </summary>
+            <value>
+            The last modified.
+            </value>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Url.Location">
+            <summary>
+            Gets or sets the location.
+            </summary>
+            <value>
+            The location.
+            </value>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Url.Priority">
+            <summary>
+            Gets or sets the priority.
+            </summary>
+            <value>
+            The priority.
+            </value>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Url.SerializedPriority">
+            <summary>
+            Gets or sets the priority.
+            </summary>
+            <value>
+            The priority.
+            </value>
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Models.Url.ShouldSerializeChangeFrequency">
+            <summary>
+            Determine if XML should serialize the ChangeFrequency property.
+            </summary>
+            <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Models.Url.ShouldSerializeLastModified">
+            <summary>
+            Determine if XML should serialize the LastModified property.
+            </summary>
+            <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Models.Url.ShouldSerializeSerializedPriority">
+            <summary>
+            Determine if XML should serialize the Priority property.
+            </summary>
+            <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        </member>
         <member name="T:Wavenet.Umbraco8.Seo.Routing.SeoContentFinder">
             <summary>
             <see cref="T:Wavenet.Umbraco8.Seo.Routing.SeoContentFinder"/>.
@@ -43,14 +202,25 @@
         <member name="M:Wavenet.Umbraco8.Seo.Routing.SeoUrlProvider.GetUrl(Umbraco.Web.UmbracoContext,Umbraco.Core.Models.PublishedContent.IPublishedContent,Umbraco.Core.Models.PublishedContent.UrlMode,System.String,System.Uri)">
             <inheritdoc />
         </member>
-        <member name="T:Wavenet.Web.Site.Controllers.DocumentTypes.SitemapXmlController">
+        <member name="T:Wavenet.Umbraco8.Seo.SitemapEventArgs">
             <summary>
-            <see cref="T:Wavenet.Web.Site.Controllers.DocumentTypes.SitemapXmlController"/>.
+            <see cref="T:Wavenet.Umbraco8.Seo.SitemapEventArgs"/>.
             </summary>
-            <seealso cref="T:Umbraco.Web.Mvc.RenderMvcController" />
+            <seealso cref="T:System.EventArgs" />
         </member>
-        <member name="M:Wavenet.Web.Site.Controllers.DocumentTypes.SitemapXmlController.Index(Umbraco.Web.Models.ContentModel)">
-            <inheritdoc />
+        <member name="M:Wavenet.Umbraco8.Seo.SitemapEventArgs.#ctor(Wavenet.Umbraco8.Seo.Models.Sitemap)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wavenet.Umbraco8.Seo.SitemapEventArgs"/> class.
+            </summary>
+            <param name="sitemap">The sitemap.</param>
+        </member>
+        <member name="P:Wavenet.Umbraco8.Seo.SitemapEventArgs.Sitemap">
+            <summary>
+            Gets the sitemap.
+            </summary>
+            <value>
+            The sitemap.
+            </value>
         </member>
     </members>
 </doc>

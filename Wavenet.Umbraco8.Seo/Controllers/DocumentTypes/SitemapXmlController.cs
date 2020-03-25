@@ -2,7 +2,7 @@
 // Copyright (c) Wavenet. All rights reserved.
 // </copyright>
 
-namespace Wavenet.Web.Site.Controllers.DocumentTypes
+namespace Wavenet.Umbraco8.Seo.Controllers.DocumentTypes
 {
     using System;
     using System.Globalization;
@@ -10,12 +10,16 @@ namespace Wavenet.Web.Site.Controllers.DocumentTypes
     using System.Linq;
     using System.Text;
     using System.Web.Mvc;
-    using System.Xml.Linq;
+    using System.Xml;
+    using System.Xml.Serialization;
 
     using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Web;
     using Umbraco.Web.Models;
     using Umbraco.Web.Mvc;
+
+    using Wavenet.Umbraco8.Seo.Extensions;
+    using Wavenet.Umbraco8.Seo.Models;
 
     /// <summary>
     /// <see cref="SitemapXmlController"/>.
@@ -23,29 +27,42 @@ namespace Wavenet.Web.Site.Controllers.DocumentTypes
     /// <seealso cref="RenderMvcController" />
     public class SitemapXmlController : RenderMvcController
     {
+        /// <summary>
+        /// Occurs when the sitemap is generated.
+        /// </summary>
+        public static event EventHandler<SitemapEventArgs> BuildSitemap;
+
         /// <inheritdoc />
         public override ActionResult Index(ContentModel model)
         {
-            XNamespace ns = "http://www.sitemaps.org/schemas/sitemap/0.9";
             var invariantCulture = CultureInfo.InvariantCulture;
-            using (var writer = new Utf8StringWriter())
+            using (var buffer = new MemoryStream())
+            using (var writer = XmlWriter.Create(buffer, new XmlWriterSettings { Indent = false, Encoding = Encoding.UTF8 }))
             {
-                var nodes = from n in model.Content.Parent.DescendantsOrSelf()
-                            where (n.TemplateId ?? 0) > 0
-                            select new XElement(
-                                ns + "url",
-                                new XElement(ns + "loc", n.Url(mode: UrlMode.Absolute)),
-                                new XElement(ns + "lastmod", n.UpdateDate.ToString("yyyy-MM-dd", invariantCulture)),
-                                new XElement(ns + "priority", Math.Pow(0.8, n.Level - 2).ToString("0.00", invariantCulture)));
+                var sitemap = new Sitemap
+                {
+                    Urls =
+                    {
+                        from n in model.Content.Parent.DescendantsOrSelf()
+                        where (n.TemplateId ?? 0) > 0
+                        select new Url
+                        {
+                            Content = n,
+                            Location = n.Url(mode: UrlMode.Absolute),
+                            LastModified = n.UpdateDate,
+                        },
+                    },
+                };
 
-                new XDocument(new XDeclaration("1.0", "utf-8", "yes"), new XElement(ns + "urlset", nodes)).Save(writer);
-                return this.Content(writer.ToString(), "application/xml", Encoding.UTF8);
+                BuildSitemap?.Invoke(this, new SitemapEventArgs(sitemap));
+
+                var ns = new XmlSerializerNamespaces();
+                ns.Add(string.Empty, "http://www.sitemaps.org/schemas/sitemap/0.9");
+                var serializer = new XmlSerializer(typeof(Sitemap));
+                writer.WriteStartDocument(true);
+                serializer.Serialize(writer, sitemap, ns);
+                return this.File(buffer.ToArray(), "application/xml");
             }
-        }
-
-        private class Utf8StringWriter : StringWriter
-        {
-            public override Encoding Encoding => Encoding.UTF8;
         }
     }
 }
