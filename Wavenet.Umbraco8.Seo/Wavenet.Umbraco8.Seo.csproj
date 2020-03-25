@@ -4,7 +4,7 @@
     <TargetFramework>net472</TargetFramework>
     <Company>Wavenet</Company>
     <Authors>Olivier Bossaer</Authors>
-    <Description>Include hangfire in your Umbraco projects.</Description>
+    <Description>Everything you need to manage your SEO in an Umbraco project!</Description>
     <Copyright>Wavenet ©</Copyright>
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/wavenet-be/Wavenet.Umbraco8.Seo</PackageProjectUrl>
