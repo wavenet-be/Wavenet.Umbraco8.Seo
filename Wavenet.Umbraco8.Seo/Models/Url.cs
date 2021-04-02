@@ -40,8 +40,23 @@ namespace Wavenet.Umbraco8.Seo.Models
         /// <value>
         /// The last modified.
         /// </value>
-        [XmlElement("lastmod", Order = 10)]
+        [XmlIgnore]
         public DateTime? LastModified { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last modified formatted.
+        /// </summary>
+        /// <value>
+        /// The last modified formatted.
+        /// </value>
+        [XmlElement("lastmod", Order = 10)]
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public string LastModifiedFormatted
+        {
+            get => this.LastModified?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+            set => throw new NotSupportedException();
+        }
 
         /// <summary>
         /// Gets or sets the location.
@@ -91,8 +106,18 @@ namespace Wavenet.Umbraco8.Seo.Models
         /// <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [Obsolete("Will disapear in 2.0.0")]
         public bool ShouldSerializeLastModified()
-            => this.LastModified != null;
+            => false;
+
+        /// <summary>
+        /// Determine if XML should serialize the LastModifiedFormatted property.
+        /// </summary>
+        /// <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public bool ShouldSerializeLastModifiedFormatted()
+            => this.LastModifiedFormatted != null;
 
         /// <summary>
         /// Determine if XML should serialize the Priority property.

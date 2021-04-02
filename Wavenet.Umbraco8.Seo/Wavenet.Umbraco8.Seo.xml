@@ -139,6 +139,14 @@
             The last modified.
             </value>
         </member>
+        <member name="P:Wavenet.Umbraco8.Seo.Models.Url.LastModifiedFormatted">
+            <summary>
+            Gets or sets the last modified formatted.
+            </summary>
+            <value>
+            The last modified formatted.
+            </value>
+        </member>
         <member name="P:Wavenet.Umbraco8.Seo.Models.Url.Location">
             <summary>
             Gets or sets the location.
@@ -172,6 +180,12 @@
         <member name="M:Wavenet.Umbraco8.Seo.Models.Url.ShouldSerializeLastModified">
             <summary>
             Determine if XML should serialize the LastModified property.
+            </summary>
+            <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
+        </member>
+        <member name="M:Wavenet.Umbraco8.Seo.Models.Url.ShouldSerializeLastModifiedFormatted">
+            <summary>
+            Determine if XML should serialize the LastModifiedFormatted property.
             </summary>
             <returns><c>true</c> if it should be serialized; Otherwize <c>false</c>.</returns>
         </member>
