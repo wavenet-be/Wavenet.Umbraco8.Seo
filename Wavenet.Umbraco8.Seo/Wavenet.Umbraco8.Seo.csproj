@@ -12,7 +12,7 @@
     <PackageIcon>wavenet.png</PackageIcon>
     <RepositoryUrl>https://github.com/wavenet-be/Wavenet.Umbraco8.Seo</RepositoryUrl>
     <PackageTags>Umbraco8 SEO</PackageTags>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <DocumentationFile>Wavenet.Umbraco8.Seo.xml</DocumentationFile>
   </PropertyGroup>
 
